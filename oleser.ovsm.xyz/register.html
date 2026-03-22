@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="dark">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>สมัครสมาชิก — OLESER Verify</title>
+<link rel="stylesheet" href="./assets/css/main.css">
+<link rel="icon" href="./assets/img/favicon.svg" type="image/svg+xml">
+<script>(function(){const t=localStorage.getItem('oleser_theme')||'dark';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+<div class="bg-atm"><div class="bg-orb bg-orb-1"></div><div class="bg-orb bg-orb-2"></div></div>
+<div class="bg-grid"></div>
+<a href="/" style="position:fixed;top:20px;left:20px;z-index:10;display:flex;align-items:center;gap:8px;color:var(--t2);text-decoration:none;font-size:13px;padding:8px 14px;background:var(--gf);border:1px solid var(--ge);border-radius:var(--r-full);backdrop-filter:blur(12px);transition:all var(--ease)" onmouseover="this.style.color='var(--t1)'" onmouseout="this.style.color='var(--t2)'">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg> กลับหน้าหลัก
+</a>
+<div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:80px 24px 24px;position:relative;z-index:1">
+  <div style="width:100%;max-width:440px">
+    <div class="fade-up" style="text-align:center;margin-bottom:32px">
+      <a href="/" style="text-decoration:none;display:inline-flex;align-items:center;gap:12px;color:var(--t1)">
+                <div class="nav-logo-icon"><svg viewBox="0 0 24 24" fill="none" width="18" height="18"><circle cx="12" cy="12" r="2.8" fill="white"/><line x1="17.2" y1="12" x2="20" y2="12" stroke="white" stroke-width="1.6" stroke-linecap="round"/><line x1="16.5" y1="14.6" x2="18.93" y2="16" stroke="white" stroke-width="1.6" stroke-linecap="round"/><line x1="14.6" y1="16.5" x2="16" y2="18.93" stroke="white" stroke-width="1.6" stroke-linecap="round"/><line x1="12" y1="17.2" x2="12" y2="20" stroke="white" stroke-width="1.6" stroke-linecap="round"/><line x1="9.4" y1="16.5" x2="8" y2="18.93" stroke="white" stroke-width="1.6" stroke-linecap="round"/><line x1="7.5" y1="14.6" x2="5.07" y2="16" stroke="white" stroke-width="1.6" stroke-linecap="round"/><line x1="6.8" y1="12" x2="4" y2="12" stroke="white" stroke-width="1.6" stroke-linecap="round"/><line x1="7.5" y1="9.4" x2="5.07" y2="8" stroke="white" stroke-width="1.6" stroke-linecap="round"/><line x1="9.4" y1="7.5" x2="8" y2="5.07" stroke="white" stroke-width="1.6" stroke-linecap="round"/><line x1="12" y1="6.8" x2="12" y2="4" stroke="white" stroke-width="1.6" stroke-linecap="round"/><line x1="14.6" y1="7.5" x2="16" y2="5.07" stroke="white" stroke-width="1.6" stroke-linecap="round"/><line x1="16.5" y1="9.4" x2="18.93" y2="8" stroke="white" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+        <span style="font-family:var(--fd);font-size:22px;font-weight:800;letter-spacing:.06em">OLESER Verify</span>
+              </a>
+    </div>
+    <div class="card p8 fade-up d1">
+      <h1 style="font-family:var(--fd);font-size:24px;font-weight:700;margin-bottom:6px">สร้างบัญชีใหม่ 🚀</h1>
+      <p style="color:var(--t2);font-size:14px;margin-bottom:24px">เริ่มใช้งาน API ของOLESER Verifyได้เลย</p>
+            <form method="POST" id="rf">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div class="fg">
+            <label class="flabel" for="username">ชื่อผู้ใช้</label>
+            <div class="iw">
+              <svg class="iico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <input type="text" class="fc" id="username" name="username" placeholder="เช่น oleser_user" value="" autocomplete="username" required autofocus>
+            </div>
+            <span class="fhint">ตัวอักษร a-z, 0-9, _ เท่านั้น (3–20 ตัว)</span>
+          </div>
+          <div class="fg">
+            <label class="flabel" for="email">อีเมล</label>
+            <div class="iw">
+              <svg class="iico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <input type="email" class="fc" id="email" name="email" placeholder="you@example.com" value="" autocomplete="email" required>
+            </div>
+          </div>
+          <div class="fg">
+            <label class="flabel" for="password">รหัสผ่าน</label>
+            <div class="iw">
+              <svg class="iico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+              <input type="password" class="fc" id="password" name="password" placeholder="อย่างน้อย 8 ตัว" autocomplete="new-password" required oninput="checkStrength(this.value)">
+              <button type="button" class="iico-r" onclick="togglePw('password',this)"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+            </div>
+            <div style="height:4px;background:var(--gf2);border-radius:var(--r-full);overflow:hidden;margin-top:4px"><div id="pw-bar" style="height:100%;width:0;border-radius:var(--r-full);transition:width .3s,background .3s"></div></div>
+            <span id="pw-hint" class="fhint"></span>
+          </div>
+          <div class="fg">
+            <label class="flabel" for="confirm">ยืนยันรหัสผ่าน</label>
+            <div class="iw">
+              <svg class="iico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <input type="password" class="fc" id="confirm" name="confirm" placeholder="••••••••" autocomplete="new-password" required>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary wf" style="padding:13px" id="rbtn">สมัครสมาชิก</button>
+        </div>
+      </form>
+      <div class="divider"></div>
+      <p style="text-align:center;font-size:14px;color:var(--t2)">มีบัญชีแล้ว? <a href="./login.html" style="color:var(--brand);text-decoration:none;font-weight:600">เข้าสู่ระบบ</a></p>
+    </div>
+  </div>
+</div>
+<div id="toast-root"></div>
+<script src="./assets/js/main.js"></script>
+<script>
+function togglePw(id){const i=document.getElementById(id);i.type=i.type==='password'?'text':'password'}
+function checkStrength(v){
+  const bar=document.getElementById('pw-bar'),hint=document.getElementById('pw-hint');
+  let s=0;if(v.length>=8)s++;if(v.length>=12)s++;if(/[A-Z]/.test(v))s++;if(/[0-9]/.test(v))s++;if(/[^A-Za-z0-9]/.test(v))s++;
+  const w=['0%','20%','40%','70%','90%','100%'],c=['','#f87171','#fb923c','#facc15','#34d399','#3b82f6'],l=['','อ่อนมาก','อ่อน','ปานกลาง','แข็งแกร่ง','แข็งแกร่งมาก'];
+  bar.style.width=w[s];bar.style.background=c[s];hint.textContent=v?l[s]:'';hint.style.color=c[s];
+}
+document.getElementById('rf').addEventListener('submit',function(e){
+  const p=document.getElementById('password').value,c=document.getElementById('confirm').value;
+  if(p!==c){e.preventDefault();if(window.toast)toast('รหัสผ่านไม่ตรงกัน','error');document.getElementById('confirm').classList.add('err');return}
+  const b=document.getElementById('rbtn');b.disabled=true;b.innerHTML='<span class="spin"></span> กำลังสมัคร...'
+})
+</script>
+</body></html>

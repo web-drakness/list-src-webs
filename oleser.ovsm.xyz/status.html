@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>สถานะระบบ — OLESER</title>
+<meta name="description" content="บริการ API Voucher True Wallet API / API True Wallet  / API ซองอั่งเปา / 
+TrueWallet ซองอั่งเปา">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="/assets/css/main.css?v=1774188431">
+<link rel="icon" href="./assets/img/favicon.svg" type="image/svg+xml">
+<!-- Apply theme before paint to prevent flash -->
+<script>
+(function(){
+  const t = localStorage.getItem('oleser_theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', t);
+})();
+</script>
+</head>
+<body>
+
+<!-- Background atmosphere -->
+<div class="bg-atm">
+  <div class="bg-orb bg-orb-1"></div>
+  <div class="bg-orb bg-orb-2"></div>
+  <div class="bg-orb bg-orb-3"></div>
+</div>
+<div class="bg-grid"></div>
+
+<div class="announce" id="ann-bar" data-id="2" style="border-bottom:1px solid var(--brand)22;background:var(--brand)0d">
+  <span style="margin-right:6px">📢</span>
+  <strong style="color:var(--brand)">โปรเด็ดฉลองเปิดใหม่</strong>
+      <span style="color:var(--t2)"> — รับแพ็คเกจใช้งานฟรี </span>
+    <div style="display:flex;align-items:center;gap:8px;margin-left:auto;flex-shrink:0">
+    <button onclick="dismissAnn('1h')" style="background:none;border:1px solid var(--ge);border-radius:var(--r-full);padding:2px 10px;font-size:11px;color:var(--t3);cursor:pointer;white-space:nowrap">ซ่อน 1 ชม.</button>
+    <button class="ann-close" aria-label="ปิด" onclick="dismissAnn('1d')" style="font-size:18px;padding:0 4px">×</button>
+  </div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar" role="navigation">
+  <!-- Brand / Logo -->
+  <a href="/" class="nav-brand">
+          <!-- SVG fallback logo matching OLESER brand -->
+      <div class="nav-logo-fb">
+        <div class="nav-logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+            <circle cx="12" cy="12" r="3" fill="white"/>
+                        <line x1="17.5" y1="12" x2="20.5" y2="12" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                        <line x1="16.76" y1="14.75" x2="19.36" y2="16.25" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                        <line x1="14.75" y1="16.76" x2="16.25" y2="19.36" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                        <line x1="12" y1="17.5" x2="12" y2="20.5" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                        <line x1="9.25" y1="16.76" x2="7.75" y2="19.36" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                        <line x1="7.24" y1="14.75" x2="4.64" y2="16.25" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                        <line x1="6.5" y1="12" x2="3.5" y2="12" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                        <line x1="7.24" y1="9.25" x2="4.64" y2="7.75" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                        <line x1="9.25" y1="7.24" x2="7.75" y2="4.64" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                        <line x1="12" y1="6.5" x2="12" y2="3.5" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                        <line x1="14.75" y1="7.24" x2="16.25" y2="4.64" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                        <line x1="16.76" y1="9.25" x2="19.36" y2="7.75" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                      </svg>
+        </div>
+        <span class="nav-wm">OLESER</span>
+      </div>
+      </a>
+
+  <!-- Center links -->
+  <ul class="nav-links" role="list">
+    <li><a href="/" >
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+      หน้าหลัก</a></li>
+    <li><a href="./api-docs.html" >
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      API Docs</a></li>
+    <li><a href="./status.html" class="active">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      สถานะ</a></li>
+      </ul>
+
+  <!-- Right side -->
+  <div class="nav-end">
+    <!-- Theme toggle -->
+    <button class="theme-btn" id="theme-btn" aria-label="สลับธีม" title="Light / Dark">
+      <!-- filled by JS -->
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+
+          <a href="./login.html" class="btn btn-glass btn-sm">เข้าสู่ระบบ</a>
+      <a href="./register.html" class="btn btn-primary btn-sm">สมัครสมาชิก</a>
+    
+    <!-- Mobile toggle -->
+    <button class="nav-toggle" aria-label="เมนู" aria-expanded="false">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile nav -->
+<div class="mobile-nav">
+  <a href="/">หน้าหลัก</a>
+  <a href="./api-docs.html">API Docs</a>
+  <a href="./status.html">สถานะ</a>
+      <a href="./login.html">เข้าสู่ระบบ</a>
+    <a href="./register.html" style="color:var(--brand)">สมัครสมาชิก</a>
+  </div>
+
+<div class="page">
+<script>
+function dismissAnn(duration) {
+  var bar = document.getElementById('ann-bar');
+  var id = bar ? bar.dataset.id : '0';
+  var hours = duration === '1h' ? 1 : 24;
+  var exp = new Date(Date.now() + hours * 3600000).toUTCString();
+  document.cookie = 'ann_hide_' + id + '=1;expires=' + exp + ';path=/';
+  if (bar) { bar.style.transition = '.3s'; bar.style.maxHeight = '0'; bar.style.padding = '0'; bar.style.overflow = 'hidden'; setTimeout(function(){bar.remove();},320); }
+}
+</script>
+<div style="padding:60px 0 100px"><div class="container-md">
+<div class="text-center fade-up" style="margin-bottom:44px">
+  <div class="s-tag">⚡ สถานะ</div>
+  <h1 class="s-title g-text" style="margin-bottom:10px">สถานะระบบ</h1>
+  <div style="display:inline-flex;align-items:center;gap:10px;padding:10px 20px;border-radius:var(--r-full);background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.2);color:var(--b3);font-weight:600;font-size:15px">
+    <span class="dot dot-ok"></span>
+    ระบบทำงานปกติทุกบริการ  </div>
+</div>
+<div class="card fade-up d1" style="margin-bottom:32px;overflow:hidden">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 24px;">
+    <div style="display:flex;align-items:center;gap:12px">
+      <span style="font-size:20px">🧧</span>
+      <div><div style="font-size:15px;font-weight:600">TrueWallet ซองอั่งเปา</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px">
+      <span class="dot dot-ok"></span>
+      <span style="color:var(--b3);font-size:14px;font-weight:600">ปกติ</span>
+    </div>
+  </div>
+  </div>
+<div class="card p6 fade-up d2" style="text-align:center">
+  <div style="font-size:13px;color:var(--t3)">อัพเดทล่าสุด: 22/03/2026 23:18</div>
+  <div style="font-size:13px;color:var(--t3);margin-top:4px">หากพบปัญหา กรุณาติดต่อ Admin ผ่านปุ่มด้านล่างขวา</div>
+</div>
+</div></div>
+
+</div><!-- /.page -->
+
+<footer class="site-footer">
+<div class="footer-inner">
+  <div class="footer-grid">
+
+    <!-- Brand -->
+    <div class="footer-brand-col">
+      <a href="/" class="footer-logo-link">
+                <div class="footer-logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" width="22" height="22">
+            <circle cx="12" cy="12" r="2.8" fill="white"/>
+                        <line x1="17.2" y1="12" x2="20" y2="12" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                        <line x1="16.5" y1="14.6" x2="18.93" y2="16" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                        <line x1="14.6" y1="16.5" x2="16" y2="18.93" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                        <line x1="12" y1="17.2" x2="12" y2="20" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                        <line x1="9.4" y1="16.5" x2="8" y2="18.93" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                        <line x1="7.5" y1="14.6" x2="5.07" y2="16" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                        <line x1="6.8" y1="12" x2="4" y2="12" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                        <line x1="7.5" y1="9.4" x2="5.07" y2="8" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                        <line x1="9.4" y1="7.5" x2="8" y2="5.07" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                        <line x1="12" y1="6.8" x2="12" y2="4" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                        <line x1="14.6" y1="7.5" x2="16" y2="5.07" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                        <line x1="16.5" y1="9.4" x2="18.93" y2="8" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                      </svg>
+        </div>
+        <span class="footer-logo-text">OLESER</span>
+              </a>
+      <p class="footer-desc">บริการ API Voucher True Wallet API / API True Wallet  / API ซองอั่งเปา / 
+TrueWallet ซองอั่งเปา</p>
+    </div>
+
+    <!-- เมนูหลัก -->
+    <div class="footer-col">
+      <div class="footer-col-title">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        เมนูหลัก
+      </div>
+      <ul class="footer-links">
+        <li><a href="/"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>หน้าหลัก</a></li>
+        <li><a href="./api-docs.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>API Docs</a></li>
+        <li><a href="./status.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>สถานะระบบ</a></li>
+        <li><a href="/#packages"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>แพ็กเกจ</a></li>
+              </ul>
+    </div>
+
+    <!-- ประวัติต่างๆ -->
+    <div class="footer-col">
+      <div class="footer-col-title">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        ประวัติต่างๆ
+      </div>
+      <ul class="footer-links">
+                <li><a href="./login.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>เข้าสู่ระบบ</a></li>
+        <li><a href="./register.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>สมัครสมาชิก</a></li>
+              </ul>
+    </div>
+
+    <!-- ติดตามเรา -->
+    <div class="footer-col">
+            <div class="footer-col-title">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        ติดตามเรา
+      </div>
+      <div class="footer-fb-box">
+        <div class="footer-fb-header">
+                    <div class="footer-fb-thumb footer-fb-thumb--icon">
+            <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><circle cx="12" cy="12" r="2.5" fill="white"/><line x1="16.8" y1="12" x2="19.5" y2="12" stroke="white" stroke-width="1.6" stroke-linecap="round"/><line x1="16.16" y1="14.4" x2="18.5" y2="15.75" stroke="white" stroke-width="1.6" stroke-linecap="round"/><line x1="14.4" y1="16.16" x2="15.75" y2="18.5" stroke="white" stroke-width="1.6" stroke-linecap="round"/><line x1="12" y1="16.8" x2="12" y2="19.5" stroke="white" stroke-width="1.6" stroke-linecap="round"/><line x1="9.6" y1="16.16" x2="8.25" y2="18.5" stroke="white" stroke-width="1.6" stroke-linecap="round"/><line x1="7.84" y1="14.4" x2="5.5" y2="15.75" stroke="white" stroke-width="1.6" stroke-linecap="round"/><line x1="7.2" y1="12" x2="4.5" y2="12" stroke="white" stroke-width="1.6" stroke-linecap="round"/><line x1="7.84" y1="9.6" x2="5.5" y2="8.25" stroke="white" stroke-width="1.6" stroke-linecap="round"/><line x1="9.6" y1="7.84" x2="8.25" y2="5.5" stroke="white" stroke-width="1.6" stroke-linecap="round"/><line x1="12" y1="7.2" x2="12" y2="4.5" stroke="white" stroke-width="1.6" stroke-linecap="round"/><line x1="14.4" y1="7.84" x2="15.75" y2="5.5" stroke="white" stroke-width="1.6" stroke-linecap="round"/><line x1="16.16" y1="9.6" x2="18.5" y2="8.25" stroke="white" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+                    <div>
+            <div class="footer-fb-name">OLESER</div>
+            <div class="footer-fb-sub">5,433 ผู้ติดตาม</div>
+          </div>
+        </div>
+        <div class="footer-fb-actions">
+          <a href="https://www.facebook.com/profile.php?id=61583236552427" target="_blank" rel="noopener" class="footer-fb-btn footer-fb-btn--blue">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            ติดตามเพจ
+          </a>
+          <button onclick="var u='https://www.facebook.com/profile.php?id=61583236552427';if(navigator.share)navigator.share({url:u});else navigator.clipboard.writeText(u).then(()=>{if(window.toast)toast('คัดลอกแล้ว','success')})" class="footer-fb-btn footer-fb-btn--ghost">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+            แชร์
+          </button>
+        </div>
+      </div>
+          </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 OLESER, All rights reserved.</span>
+    <span class="footer-bottom-right">
+      OLESER | OLESER API Verify             · <a href="https://www.facebook.com/profile.php?id=61583236552427" target="_blank" rel="noopener" style="color:inherit">แจ้งปัญหา</a>    </span>
+  </div>
+</div>
+</footer>
+
+<style>
+.site-footer{position:relative;z-index:1;border-top:1px solid var(--ge);margin-top:80px;background:var(--bg2)}
+.footer-inner{max-width:1200px;margin:0 auto;padding:48px 24px 0}
+.footer-grid{display:grid;grid-template-columns:240px 1fr 1fr 190px;gap:36px;padding-bottom:40px}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.footer-grid{grid-template-columns:1fr}}
+.footer-logo-link{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--t1);margin-bottom:14px}
+.footer-logo-img{height:36px;width:auto}
+.footer-logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--brand),var(--b2));border-radius:9px;display:flex;align-items:center;justify-content:center}
+.footer-logo-text{font-family:var(--fd);font-size:17px;font-weight:800;letter-spacing:.08em}
+.footer-desc{color:var(--t3);font-size:13px;line-height:1.7;max-width:210px;margin:0}
+.footer-col-title{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brand);margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--brand);width:fit-content}
+.footer-links{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.footer-links li a{display:flex;align-items:center;gap:8px;color:var(--t2);text-decoration:none;font-size:13.5px;transition:color .2s,padding-left .2s}
+.footer-links li a:hover{color:var(--t1);padding-left:4px}
+.footer-links li a svg{opacity:.55;flex-shrink:0}
+.footer-fb-box{background:var(--bg3);border:1px solid var(--ge);border-radius:12px;padding:14px}
+.footer-fb-header{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.footer-fb-thumb{width:34px;height:34px;border-radius:8px;object-fit:cover}
+.footer-fb-thumb--icon{background:linear-gradient(135deg,var(--brand),var(--b2));display:flex;align-items:center;justify-content:center}
+.footer-fb-name{font-size:13px;font-weight:700;color:var(--t1)}
+.footer-fb-sub{font-size:11px;color:var(--t3);margin-top:1px}
+.footer-fb-actions{display:flex;gap:7px}
+.footer-fb-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:5px;padding:7px 8px;border-radius:7px;font-size:11.5px;font-weight:600;cursor:pointer;text-decoration:none;transition:.2s;border:none;font-family:inherit}
+.footer-fb-btn--blue{background:#1877f2;color:#fff}
+.footer-fb-btn--blue:hover{background:#166fe0;color:#fff}
+.footer-fb-btn--ghost{background:var(--ge);color:var(--t2)}
+.footer-fb-btn--ghost:hover{color:var(--t1)}
+.footer-bottom{border-top:1px solid var(--ge);padding:16px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12px;color:var(--t3)}
+.footer-bottom-right{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+</style>
+
+<!-- ════════════════════ MUSIC PLAYER ════════════════════ -->
+<div id="music-player" style="">
+  <!-- Collapse toggle -->
+  <button id="mp-collapse" title="พับ/ขยาย" onclick="toggleMpCollapse()" style="background:none;border:none;color:var(--t3);cursor:pointer;padding:4px;line-height:0;flex-shrink:0;transition:transform .3s;">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>
+  <img id="mp-cover" class="mp-cover" src="" alt="" onerror="this.style.display='none'">
+  <div class="mp-info">
+    <div class="mp-title" id="mp-title">—</div>
+    <div class="mp-artist" id="mp-artist"></div>
+  </div>
+  <div class="mp-ctrl">
+    <button class="mp-btn" id="mp-prev" title="ก่อนหน้า"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg></button>
+    <button class="mp-btn" id="mp-play" title="เล่น/หยุด"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+    <button class="mp-btn" id="mp-next" title="ถัดไป"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zm2.5-6 8.5 6V6z" style="transform:scaleX(-1);transform-origin:center"/><path d="M16 6h2v12h-2z"/></svg></button>
+    <input type="range" class="mp-vol" id="mp-vol" min="0" max="1" step="0.05" value="0.5">
+  </div>
+</div>
+<script>
+// Restore track position across pages
+var _mpSongs = [{"id":1,"title":"LoFi Chill","artist":"LoFi Chill","url":"https:\/\/sharkonelove.github.io\/OVSMFONTS\/fonts\/lofi-chill-smooth-chill-lofi-for-vlogs-and-background-music-159456.mp3","cover_url":"https:\/\/img2.pic.in.th\/pic\/imagef2542f21fab3a707.png","is_active":1,"sort_order":99}];
+var _mpIdx   = parseInt(sessionStorage.getItem('mp_idx') || '0');
+var _mpPos   = parseFloat(sessionStorage.getItem('mp_pos') || '0');
+var _mpPlay  = sessionStorage.getItem('mp_playing') === '1';
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Start from saved position
+  MusicPlayer.init(_mpSongs, _mpIdx, _mpPos, _mpPlay);
+});
+
+// Save state before leaving page
+window.addEventListener('beforeunload', function() {
+  var state = MusicPlayer.getState();
+  if (state) {
+    sessionStorage.setItem('mp_idx', state.idx);
+    sessionStorage.setItem('mp_pos', state.pos);
+    sessionStorage.setItem('mp_playing', state.playing ? '1' : '0');
+  }
+});
+
+function toggleMpCollapse() {
+  var mp = document.getElementById('music-player');
+  var btn = document.getElementById('mp-collapse');
+  var collapsed = mp.style.maxWidth === '52px';
+  if (collapsed) {
+    mp.style.maxWidth = '300px';
+    mp.style.overflow = '';
+    btn.style.transform = '';
+    document.cookie = 'mp_collapsed=0;path=/;max-age=86400';
+  } else {
+    mp.style.maxWidth = '52px';
+    mp.style.overflow = 'hidden';
+    btn.style.transform = 'rotate(180deg)';
+    document.cookie = 'mp_collapsed=1;path=/;max-age=86400';
+  }
+}
+</script>
+
+<!-- ════════════════════ CONTACT FAB ════════════════════ -->
+<div id="cfab-wrap">
+  <div class="cpanel">
+    <div class="ts tm fw6" style="letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px">ติดต่อเรา</div>
+        <a href="https://discord.gg/cGWNdEpTEE" target="_blank" class="crow">
+      <div class="cicon" style="background:#5865f222;color:#5865f2">🎮</div>
+      <div><div class="fw5" style="font-size:14px">Discord</div><div class="ts tm">เซิร์ฟเวอร์ชุมชน</div></div>
+    </a>
+        <a href="https://www.facebook.com/profile.php?id=61583236552427" target="_blank" class="crow">
+      <div class="cicon" style="background:#1877f222;color:#1877f2">📘</div>
+      <div><div class="fw5" style="font-size:14px">Facebook</div><div class="ts tm">เพจทางการ</div></div>
+    </a>
+      </div>
+  <button class="cfab" aria-label="ติดต่อเรา" title="ติดต่อเรา">
+    <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+  </button>
+</div>
+
+
+<div id="toast-root"></div>
+<script src="/assets/js/main.js?v=1774188451"></script>
+</body>
+</html>
