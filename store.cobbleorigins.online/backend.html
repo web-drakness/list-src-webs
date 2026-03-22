@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Minecraft WebShop Backend - ระบบจัดการร้านค้าเซิร์ฟเวอร์ Minecraft">
+    <title>เข้าสู่ระบบ - VERITY STORE Backend</title>
+    <link rel="icon" type="image/png" href="/assets/img/favicon-backend.webp">
+    <link rel="stylesheet" href="/css/base/fonts.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/backend/css/login.css?v=1774093443">
+    <style>
+        .form-input.error {
+            border-color: #ef4444 !important;
+            background-color: #fef2f2 !important;
+            animation: shake 0.5s cubic-bezier(.36, .07, .19, .97) both;
+        }
+
+        .form-input.error:focus {
+            box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15) !important;
+        }
+
+        .form-input.error~.input-icon,
+        .input-wrapper:has(.form-input.error) .input-icon {
+            color: #ef4444 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="toast-container"></div>
+    <div class="login-background">
+        <div class="grid-pattern"></div>
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+    </div>
+    <div class="login-wrapper">
+        <div class="login-branding">
+            <div class="branding-content">
+                <div class="branding-icon">
+                    <img src="/assets/img/icon-backend.webp" alt="VERITY STORE Logo" style="width: 80%; height: 80%; object-fit: contain;">
+                </div>
+                <h1 class="branding-title">VERITY STORE</h1>
+                <p class="branding-subtitle">ระบบหลังบ้านสำหรับจัดการร้านค้าเซิร์ฟเวอร์ Minecraft อย่างมืออาชีพ</p>
+                <div class="branding-features">
+                    <div class="feature-item">
+                        <i class="fas fa-chart-pie"></i>
+                        <span>Dashboard & สถิติยอดขาย</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-gamepad"></i>
+                        <span>จัดการไอเทมและแพ็กเกจ</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-coins"></i>
+                        <span>ระบบทำรายการอัตโนมัติ</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-users"></i>
+                        <span>จัดการผู้เล่นและแอดมิน</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="login-card">
+            <div class="login-header">
+                <h1>เข้าสู่ระบบ</h1>
+                <p>กรุณากรอกข้อมูลเพื่อเข้าใช้งานระบบ</p>
+            </div>
+            <form id="login-form" class="login-form" novalidate>
+                <div class="form-group">
+                    <label for="email">
+                        <i class="fas fa-at"></i>
+                        อีเมล
+                    </label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-envelope input-icon"></i>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            class="form-input"
+                            placeholder="admin@example.com"
+                            autocomplete="email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">
+                        <i class="fas fa-key"></i>
+                        รหัสผ่าน
+                    </label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            class="form-input"
+                            placeholder="รหัสผ่านของคุณ"
+                            autocomplete="current-password">
+                        <button type="button" class="password-toggle" id="password-toggle" aria-label="Toggle password visibility">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <button type="submit" class="btn-login" id="btn-login">
+                    <span class="btn-text">เข้าสู่ระบบ</span>
+                    <i class="fas fa-arrow-right"></i>
+                    <span class="btn-spinner">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </span>
+                </button>
+            </form>
+            <div class="login-footer">
+                <p>&copy; 2026 VERITY STORE | Minecraft Server Store</p>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function showToast(msg, type = 'success') {
+            const container = document.getElementById('toast-container');
+            if (!container) return;
+            const existing = Array.from(container.querySelectorAll('.toast span'))
+                .find(span => span.textContent === msg);
+            if (existing) return;
+            const toast = document.createElement('div');
+            toast.className = 'toast ' + type;
+            toast.innerHTML = `<i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i> <span>${msg}</span>`;
+            container.appendChild(toast);
+            setTimeout(() => {
+                toast.style.animation = 'slideIn 0.3s ease-in reverse forwards';
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+        document.addEventListener('DOMContentLoaded', async function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const expired = urlParams.get('expired');
+            const maintenance = urlParams.get('maintenance');
+            const suspended = urlParams.get('suspended');
+            const locked = urlParams.get('locked');
+            const timeout = urlParams.get('timeout');
+            const logout = urlParams.get('logout');
+            if (expired || maintenance || suspended || locked || timeout || logout) {
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+            if (expired || maintenance || suspended) {
+                let title = 'จำกัดการเข้าถึง';
+                let icon = 'warning';
+                let text = 'เว็บไซต์ไม่สามารถใช้งานได้ในขณะนี้';
+                if (maintenance) title = 'ระบบปิดปรับปรุง';
+                if (suspended) {
+                    title = 'ถูกระงับการให้บริการ';
+                    icon = 'error';
+                }
+                if (expired) title = 'เว็บไซต์หมดอายุ';
+                try {
+                    const res = await fetch('/backend/api/admin/website_expiry.php');
+                    const data = await res.json();
+                    if (data.success && data.data) {
+                        text = data.data.expiry_message || text;
+                    }
+                } catch (e) {}
+                Swal.fire({
+                    icon: icon,
+                    title: title,
+                    text: text,
+                    confirmButtonColor: '#f97316'
+                });
+            }
+            if (locked === '1') {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'บัญชีถูกระงับ',
+                    text: 'บัญชีของคุณถูกระงับการใช้งาน กรุณาติดต่อผู้ดูแลระบบ',
+                    confirmButtonColor: '#f97316'
+                });
+            }
+            if (timeout === '1') {
+                Swal.fire({
+                    icon: 'info',
+                    title: 'หมดเวลาการเชื่อมต่อ',
+                    text: 'เพื่อความปลอดภัย ระบบได้ทำการ Logout เนื่องจากไม่มีการใช้งานเกิน 1 ชั่วโมง',
+                    confirmButtonColor: '#3b82f6'
+                });
+            }
+            if (logout === 'success') {
+                showToast('ออกจากระบบสำเร็จ', 'success');
+            }
+        });
+        const passwordInput = document.getElementById('password');
+        const passwordToggle = document.getElementById('password-toggle');
+        const toggleIcon = passwordToggle.querySelector('i');
+        passwordToggle.addEventListener('click', () => {
+            const isPassword = passwordInput.type === 'password';
+            passwordInput.type = isPassword ? 'text' : 'password';
+            toggleIcon.classList.toggle('fa-eye', !isPassword);
+            toggleIcon.classList.toggle('fa-eye-slash', isPassword);
+        });
+        const loginForm = document.getElementById('login-form');
+        const btnLogin = document.getElementById('btn-login');
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const emailInput = document.getElementById('email');
+            const passwordInput = document.getElementById('password');
+            const email = emailInput.value.trim();
+            const password = passwordInput.value;
+            let isValid = true;
+            let firstError = null;
+            [emailInput, passwordInput].forEach(el => el.classList.remove('error'));
+            if (!email) {
+                isValid = false;
+                emailInput.classList.add('error');
+                if (!firstError) firstError = 'กรุณากรอกอีเมล';
+            }
+            if (!password) {
+                isValid = false;
+                passwordInput.classList.add('error');
+                if (!firstError) firstError = 'กรุณากรอกรหัสผ่าน';
+            }
+            if (!isValid) {
+                showToast(firstError || 'กรุณากรอกข้อมูลให้ครบถ้วน', 'error');
+                return;
+            }
+            btnLogin.classList.add('loading');
+            btnLogin.disabled = true;
+            try {
+                const response = await fetch('/backend/api/auth/login.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email,
+                        password
+                    })
+                });
+                const data = await response.json();
+                if (data.success) {
+                    btnLogin.classList.add('success-pulse');
+                    showToast('เข้าสู่ระบบสำเร็จ กำลังพาคุณไป...', 'success');
+                    localStorage.setItem('admin_last_page', 'dashboard');
+                    setTimeout(() => {
+                        window.location.href = '/backend/';
+                    }, 800);
+                } else {
+                    loginForm.classList.add('shake');
+                    setTimeout(() => loginForm.classList.remove('shake'), 500);
+                    showToast(data.message || 'เข้าสู่ระบบไม่สำเร็จ', 'error');
+                    btnLogin.classList.remove('loading');
+                    btnLogin.disabled = false;
+                }
+            } catch (error) {
+                console.error('Login error:', error);
+                loginForm.classList.add('shake');
+                setTimeout(() => loginForm.classList.remove('shake'), 500);
+                showToast('ไม่สามารถเชื่อมต่อกับเซิร์ฟเวอร์ได้', 'error');
+                btnLogin.classList.remove('loading');
+                btnLogin.disabled = false;
+            }
+        });
+        document.querySelectorAll('.form-input').forEach(input => {
+            input.addEventListener('focus', () => {
+                input.closest('.form-group').classList.add('focused');
+            });
+            input.addEventListener('blur', () => {
+                input.closest('.form-group').classList.remove('focused');
+            });
+        });
+    </script>
+</body>
+
+</html>

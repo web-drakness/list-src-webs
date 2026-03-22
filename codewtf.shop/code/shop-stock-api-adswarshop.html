@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- SEO -->
+    <title>เว็บขาย บัญชี stock api adswar.shop - CODEWTF.SHOP</title>
+    <meta name="description" content="🔧 ระบบและเทคโนโลยี
+- PHP PDO, MySQL
+- Tailwind CSS, SweetAlert, AJAX
+- Google reCAPTCHA, Google Fonts
+
+👤 ระบบสมาชิก
+- สมัครสมาชิก / เข้าสู่ระบบ (Login / R…">
+    <link rel="canonical" href="https://codewtf.shop/code/shop-stock-api-adswarshop">
+    <meta property="og:title" content="เว็บขาย บัญชี stock api adswar.shop - CODEWTF.SHOP">
+    <meta property="og:description" content="🔧 ระบบและเทคโนโลยี
+- PHP PDO, MySQL
+- Tailwind CSS, SweetAlert, AJAX
+- Google reCAPTCHA, Google Fonts
+
+👤 ระบบสมาชิก
+- สมัครสมาชิก / เข้าสู่ระบบ (Login / R…">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://codewtf.shop/code/shop-stock-api-adswarshop">
+        <meta property="og:image" content="https://codewtf.shop/uploads/products/img_69bf8ad772dc80.78171080.png">
+    
+    <!-- App Meta -->
+    <meta name="site-url" content="https://codewtf.shop">
+    <meta name="csrf-token" content="b151ac70ee55f5ed87e958853ffc51f74bb59d53d436ad3cf168506480a84096">
+
+    <!-- Favicon & Icons (SEO) -->
+    <link rel="icon" href="https://codewtf.shop/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://codewtf.shop/assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="https://codewtf.shop/assets/images/logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://codewtf.shop/assets/images/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://codewtf.shop/assets/images/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://codewtf.shop/assets/images/logo.png">
+    <meta name="theme-color" content="#ff0000">
+    <meta name="robots" content="index, follow">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="เว็บขาย บัญชี stock api adswar.shop - CODEWTF.SHOP">
+    <meta name="twitter:description" content="🔧 ระบบและเทคโนโลยี
+- PHP PDO, MySQL
+- Tailwind CSS, SweetAlert, AJAX
+- Google reCAPTCHA, Google Fonts
+
+👤 ระบบสมาชิก
+- สมัครสมาชิก / เข้าสู่ระบบ (Login / R…">
+        <meta name="twitter:image" content="https://codewtf.shop/uploads/products/img_69bf8ad772dc80.78171080.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="https://codewtf.shop/assets/css/main.css">
+
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    </head>
+<body data-loggedin="0">
+
+<!-- Sidebar Overlay -->
+<div class="sidebar-overlay"></div>
+
+<!-- Mobile Sidebar -->
+<nav class="mobile-sidebar">
+    <div class="sidebar-header">
+        <div class="nav-logo-text">CODEWTF.SHOP</div>
+        <div class="sidebar-close"><i class="ri-close-line"></i></div>
+    </div>
+    <div class="sidebar-nav">
+        <a href="https://codewtf.shop/" class="sidebar-link"><i class="ri-home-4-line"></i> หน้าแรก</a>
+        <a href="https://codewtf.shop/ranking" class="sidebar-link"><i class="ri-trophy-line"></i> Ranking</a>
+        <a href="https://codewtf.shop/search" class="sidebar-link"><i class="ri-search-line"></i> ค้นหา</a>
+                <a href="https://web.facebook.com/mix.pawarit.2025" target="_blank" class="sidebar-link"><i class="ri-facebook-circle-fill" style="color:#1877f2"></i> Facebook</a>
+                <hr style="border-color:var(--border);margin:8px 0;">
+                <a href="https://codewtf.shop/login" class="sidebar-link"><i class="ri-login-circle-line"></i> เข้าสู่ระบบ</a>
+        <a href="https://codewtf.shop/register" class="sidebar-link"><i class="ri-user-add-line"></i> สมัครสมาชิก</a>
+            </div>
+    <div class="sidebar-cats">
+        <h4>หมวดหมู่</h4>
+                <a href="https://codewtf.shop/category/discord-codes" class="sidebar-link" style="font-size:0.88rem;">
+            <i class="ri-discord-line"></i> Discord Codes        </a>
+                <a href="https://codewtf.shop/category/line-codes" class="sidebar-link" style="font-size:0.88rem;">
+            <i class="ri-line-line"></i> Line Codes        </a>
+                <a href="https://codewtf.shop/category/tiktok-codes" class="sidebar-link" style="font-size:0.88rem;">
+            <i class="ri-tiktok-line"></i> Tiktok Codes        </a>
+                <a href="https://codewtf.shop/category/web-codes" class="sidebar-link" style="font-size:0.88rem;">
+            <i class="ri-code-line"></i> Web Codes        </a>
+            </div>
+</nav>
+
+<!-- Navbar -->
+<header class="navbar">
+    <div class="container nav-inner">
+        <!-- Hamburger (mobile) -->
+        <button class="nav-hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+
+        <!-- Logo -->
+        <a href="https://codewtf.shop/" class="nav-logo">
+                        <img src="https://codewtf.shop/uploads/logos/img_69bed513980dd1.34311340.png" alt="CODEWTF.SHOP">
+                    </a>
+
+        <!-- Main Links -->
+        <nav class="nav-links">
+            <a href="https://codewtf.shop/" class="nav-link">หน้าแรก</a>
+
+            <!-- Categories Scroll -->
+            <div class="nav-categories">
+                                <a href="https://codewtf.shop/category/discord-codes" class="nav-cat-item">
+                    <i class="ri-discord-line"></i>Discord Codes                </a>
+                                <a href="https://codewtf.shop/category/line-codes" class="nav-cat-item">
+                    <i class="ri-line-line"></i>Line Codes                </a>
+                                <a href="https://codewtf.shop/category/tiktok-codes" class="nav-cat-item">
+                    <i class="ri-tiktok-line"></i>Tiktok Codes                </a>
+                                <a href="https://codewtf.shop/category/web-codes" class="nav-cat-item">
+                    <i class="ri-code-line"></i>Web Codes                </a>
+                            </div>
+
+            <a href="https://codewtf.shop/ranking" class="nav-link">Ranking</a>
+        </nav>
+
+        <!-- Search -->
+        <div class="nav-search">
+            <i class="ri-search-line search-icon"></i>
+            <input type="text" placeholder="ค้นหาโค้ด..." autocomplete="off" aria-label="ค้นหา">
+            <div class="search-dropdown"></div>
+        </div>
+
+        <!-- Right -->
+        <div class="nav-right">
+            <!-- Facebook -->
+                        <a href="https://web.facebook.com/mix.pawarit.2025" target="_blank" class="nav-fb-btn">
+                <i class="ri-facebook-circle-fill"></i>
+                <span class="btn-text">Facebook</span>
+            </a>
+            
+                        <a href="https://codewtf.shop/login" class="btn btn-ghost btn-sm">เข้าสู่ระบบ</a>
+            <a href="https://codewtf.shop/register" class="btn btn-primary btn-sm">สมัครสมาชิก</a>
+                    </div>
+    </div>
+</header>
+
+<!-- Toast Area -->
+<div class="toast-area" id="toast-area"></div>
+
+<main class="product-detail">
+<div class="container px-4 mx-auto">
+
+    <!-- Breadcrumb -->
+    <nav class="flex items-center flex-wrap gap-1.5 text-sm text-gray-400 mb-6">
+        <a href="https://codewtf.shop/" class="hover:text-white transition-colors">หน้าแรก</a>
+        <i class="ri-arrow-right-s-line"></i>
+        <a href="https://codewtf.shop/category/web-codes" class="hover:text-white transition-colors">Web Codes</a>
+        <i class="ri-arrow-right-s-line"></i>
+        <span class="text-white truncate max-w-[200px] sm:max-w-none">เว็บขาย บัญชี stock api adswar.shop</span>
+    </nav>
+
+    <!-- Main Grid: stack on mobile, side-by-side on lg+ -->
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-6 lg:gap-8 items-start">
+
+        <!-- Left: Gallery + Description + Reviews -->
+        <div class="space-y-6">
+
+            <!-- Gallery -->
+            <div class="product-gallery">
+                                <img src="https://codewtf.shop/uploads/products/img_69bf8ad772dc80.78171080.png"
+                     alt="เว็บขาย บัญชี stock api adswar.shop"
+                     class="w-full rounded-xl object-cover aspect-video sm:aspect-[4/3] lg:aspect-video"
+                     id="main-product-img"
+                     onclick="openLightbox(0)"
+                     title="คลิกเพื่อดูขนาดเต็ม">
+                                <div class="flex gap-2 mt-3 overflow-x-auto pb-1 scrollbar-thin">
+                    <img src="https://codewtf.shop/uploads/products/img_69bf8ad772dc80.78171080.png"
+                         class="product-thumb w-16 h-16 sm:w-20 sm:h-20 rounded-lg object-cover cursor-pointer border-2 border-primary shrink-0 active"
+                         onclick="switchImg(this); openLightbox(0)">
+                                        <img src="https://codewtf.shop/uploads/products/img_69bf8ad7749e92.75655869.png"
+                         class="product-thumb w-16 h-16 sm:w-20 sm:h-20 rounded-lg object-cover cursor-pointer border-2 border-transparent hover:border-primary transition-colors shrink-0"
+                         onclick="switchImg(this); openLightbox(1)">
+                                        <img src="https://codewtf.shop/uploads/products/img_69bf8ad774db52.21915581.png"
+                         class="product-thumb w-16 h-16 sm:w-20 sm:h-20 rounded-lg object-cover cursor-pointer border-2 border-transparent hover:border-primary transition-colors shrink-0"
+                         onclick="switchImg(this); openLightbox(2)">
+                                        <img src="https://codewtf.shop/uploads/products/img_69bf8ad7751686.01485743.png"
+                         class="product-thumb w-16 h-16 sm:w-20 sm:h-20 rounded-lg object-cover cursor-pointer border-2 border-transparent hover:border-primary transition-colors shrink-0"
+                         onclick="switchImg(this); openLightbox(3)">
+                                        <img src="https://codewtf.shop/uploads/products/img_69bf8ad7754ff9.95253334.png"
+                         class="product-thumb w-16 h-16 sm:w-20 sm:h-20 rounded-lg object-cover cursor-pointer border-2 border-transparent hover:border-primary transition-colors shrink-0"
+                         onclick="switchImg(this); openLightbox(4)">
+                                        <img src="https://codewtf.shop/uploads/products/img_69bf8ad7757b41.05387684.png"
+                         class="product-thumb w-16 h-16 sm:w-20 sm:h-20 rounded-lg object-cover cursor-pointer border-2 border-transparent hover:border-primary transition-colors shrink-0"
+                         onclick="switchImg(this); openLightbox(5)">
+                                        <img src="https://codewtf.shop/uploads/products/img_69bf8ad775aae3.58845942.png"
+                         class="product-thumb w-16 h-16 sm:w-20 sm:h-20 rounded-lg object-cover cursor-pointer border-2 border-transparent hover:border-primary transition-colors shrink-0"
+                         onclick="switchImg(this); openLightbox(6)">
+                                        <img src="https://codewtf.shop/uploads/products/img_69bf8ad775dbd8.97746678.png"
+                         class="product-thumb w-16 h-16 sm:w-20 sm:h-20 rounded-lg object-cover cursor-pointer border-2 border-transparent hover:border-primary transition-colors shrink-0"
+                         onclick="switchImg(this); openLightbox(7)">
+                                        <img src="https://codewtf.shop/uploads/products/img_69bf8ad7760b32.20527189.png"
+                         class="product-thumb w-16 h-16 sm:w-20 sm:h-20 rounded-lg object-cover cursor-pointer border-2 border-transparent hover:border-primary transition-colors shrink-0"
+                         onclick="switchImg(this); openLightbox(8)">
+                                        <img src="https://codewtf.shop/uploads/products/img_69bf8ad7763911.08948737.png"
+                         class="product-thumb w-16 h-16 sm:w-20 sm:h-20 rounded-lg object-cover cursor-pointer border-2 border-transparent hover:border-primary transition-colors shrink-0"
+                         onclick="switchImg(this); openLightbox(9)">
+                                        <img src="https://codewtf.shop/uploads/products/img_69bf8ad7766ff1.88857759.png"
+                         class="product-thumb w-16 h-16 sm:w-20 sm:h-20 rounded-lg object-cover cursor-pointer border-2 border-transparent hover:border-primary transition-colors shrink-0"
+                         onclick="switchImg(this); openLightbox(10)">
+                                        <img src="https://codewtf.shop/uploads/products/img_69bf8ad7769fa3.81653384.png"
+                         class="product-thumb w-16 h-16 sm:w-20 sm:h-20 rounded-lg object-cover cursor-pointer border-2 border-transparent hover:border-primary transition-colors shrink-0"
+                         onclick="switchImg(this); openLightbox(11)">
+                                        <img src="https://codewtf.shop/uploads/products/img_69bf8ad776cd58.31516999.png"
+                         class="product-thumb w-16 h-16 sm:w-20 sm:h-20 rounded-lg object-cover cursor-pointer border-2 border-transparent hover:border-primary transition-colors shrink-0"
+                         onclick="switchImg(this); openLightbox(12)">
+                                        <img src="https://codewtf.shop/uploads/products/img_69bf8ad776f8b9.07700977.png"
+                         class="product-thumb w-16 h-16 sm:w-20 sm:h-20 rounded-lg object-cover cursor-pointer border-2 border-transparent hover:border-primary transition-colors shrink-0"
+                         onclick="switchImg(this); openLightbox(13)">
+                                    </div>
+                            </div>
+            <!-- Lightbox -->
+            <div class="lightbox-overlay" id="lightbox-overlay" onclick="closeLightboxOnBg(event)">
+                <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+                <span class="lightbox-prev" onclick="lightboxNav(-1);event.stopPropagation()">&#8249;</span>
+                <img id="lightbox-img" src="" alt="Product Image">
+                <span class="lightbox-next" onclick="lightboxNav(1);event.stopPropagation()">&#8250;</span>
+            </div>
+            <script>
+            var lightboxImgs = ["https:\/\/codewtf.shop\/uploads\/products\/img_69bf8ad772dc80.78171080.png","https:\/\/codewtf.shop\/uploads\/products\/img_69bf8ad7749e92.75655869.png","https:\/\/codewtf.shop\/uploads\/products\/img_69bf8ad774db52.21915581.png","https:\/\/codewtf.shop\/uploads\/products\/img_69bf8ad7751686.01485743.png","https:\/\/codewtf.shop\/uploads\/products\/img_69bf8ad7754ff9.95253334.png","https:\/\/codewtf.shop\/uploads\/products\/img_69bf8ad7757b41.05387684.png","https:\/\/codewtf.shop\/uploads\/products\/img_69bf8ad775aae3.58845942.png","https:\/\/codewtf.shop\/uploads\/products\/img_69bf8ad775dbd8.97746678.png","https:\/\/codewtf.shop\/uploads\/products\/img_69bf8ad7760b32.20527189.png","https:\/\/codewtf.shop\/uploads\/products\/img_69bf8ad7763911.08948737.png","https:\/\/codewtf.shop\/uploads\/products\/img_69bf8ad7766ff1.88857759.png","https:\/\/codewtf.shop\/uploads\/products\/img_69bf8ad7769fa3.81653384.png","https:\/\/codewtf.shop\/uploads\/products\/img_69bf8ad776cd58.31516999.png","https:\/\/codewtf.shop\/uploads\/products\/img_69bf8ad776f8b9.07700977.png"];
+            var lightboxIdx = 0;
+            function openLightbox(idx) {
+                lightboxIdx = idx;
+                document.getElementById('lightbox-img').src = lightboxImgs[idx];
+                document.getElementById('lightbox-overlay').classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+            function closeLightbox() {
+                document.getElementById('lightbox-overlay').classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            function closeLightboxOnBg(e) {
+                if (e.target === document.getElementById('lightbox-overlay')) closeLightbox();
+            }
+            function lightboxNav(dir) {
+                lightboxIdx = (lightboxIdx + dir + lightboxImgs.length) % lightboxImgs.length;
+                document.getElementById('lightbox-img').src = lightboxImgs[lightboxIdx];
+            }
+            document.addEventListener('keydown', function(e) {
+                if (document.getElementById('lightbox-overlay').classList.contains('active')) {
+                    if (e.key === 'Escape') closeLightbox();
+                    if (e.key === 'ArrowRight') lightboxNav(1);
+                    if (e.key === 'ArrowLeft') lightboxNav(-1);
+                }
+            });
+            </script>
+            <!-- Description -->
+            <div class="card rounded-xl overflow-hidden">
+                <div class="card-header flex items-center gap-2 px-5 py-4 border-b border-white/10">
+                    <h3 class="flex items-center gap-2 font-semibold text-base">
+                        <i class="ri-file-text-line"></i> รายละเอียด
+                    </h3>
+                </div>
+                <div class="card-body px-5 py-4">
+                    <div class="leading-relaxed text-gray-400 text-sm prose prose-invert max-w-none">
+                        <b>🔧 ระบบและเทคโนโลยี</b><br>
+- PHP PDO, MySQL<br>
+- Tailwind CSS, SweetAlert, AJAX<br>
+- Google reCAPTCHA, Google Fonts<br><br>
+
+<b>👤 ระบบสมาชิก</b><br>
+- สมัครสมาชิก / เข้าสู่ระบบ (Login / Register)<br>
+- รองรับการสมัครผ่าน Google และ Discord (ตั้งค่าผ่านหลังบ้านได้)<br><br>
+
+<b>🛒 ระบบขายสินค้า (Account API)</b><br>
+- ขายบัญชีแบบไม่ต้องสต๊อกสินค้าเอง (ดึงจาก <a href="https://adswar.shop" target="_blank">Adswar.shop</a>)<br>
+- ตั้งค่ากำไร (%) ได้จากหลังบ้าน<br><br>
+
+<b>💰 ระบบเติมเงิน</b><br>
+- รองรับ Wallet และ PromptPay<br>
+- ใช้ API จาก <a href="https://inwcloud.shop" target="_blank">Inwcloud.shop</a><br><br>
+
+<b>🤝 ระบบ Affiliate</b><br>
+- มีระบบแนะนำเพื่อน (Affiliate)<br>
+- สามารถตั้งค่า % ค่าคอมมิชชั่นได้จากหลังบ้าน<br><br>
+
+<b>🎁 ระบบโบนัส</b><br>
+- รับของขวัญรายวัน (สุ่มยอดเงิน)<br>
+- ตั้งค่ารางวัลได้จากหลังบ้าน<br><br>
+
+<b>🔌 ระบบ API</b><br>
+- มี API สำหรับให้ผู้อื่นดึงสินค้าไปขายต่อได้<br><br>
+
+<b>👑 ระบบสิทธิ์ผู้ใช้งาน (Role)</b><br>
+- Member<br>
+- VIP (ตั้งค่าส่วนลดได้)<br>
+- Reseller (ตั้งค่าส่วนลดได้)<br>
+- Admin<br><br>
+
+<hr><br>
+
+<b>⚙️ ระบบหลังบ้าน (Admin Panel)</b><br>
+- ตั้งค่า API ต่าง ๆ เช่น <a href="https://inwcloud.shop" target="_blank">Inwcloud.shop</a>, <a href="https://adswar.shop" target="_blank">Adswar.shop</a> และอื่น ๆ<br>
+- จัดการสินค้า<br>
+- จัดการผู้ใช้งาน<br>
+- ดูสถิติภายในเว็บไซต์<br>
+- จัดการคูปอง (ส่วนลดสินค้า)<br>                    </div>
+                </div>
+            </div>
+
+            <!-- Reviews -->
+            <div class="card rounded-xl overflow-hidden">
+                <div class="card-header flex flex-wrap items-center justify-between gap-3 px-5 py-4 border-b border-white/10">
+                    <h3 class="flex items-center gap-2 font-semibold text-base">
+                        <i class="ri-star-line"></i> รีวิวจากผู้ซื้อ
+                    </h3>
+                    <div class="flex items-center gap-2">
+                        <div class="stars"><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i></div>                        <span class="font-bold">0.0</span>
+                        <span class="text-gray-400 text-xs">(0 รีวิว)</span>
+                    </div>
+                </div>
+
+                
+                <div class="divide-y divide-white/5">
+                                        <div class="py-10 text-center text-gray-400">
+                        <i class="ri-star-line text-3xl block mb-2"></i>
+                        ยังไม่มีรีวิว เป็นคนแรกที่รีวิวสินค้านี้
+                    </div>
+                                    </div>
+            </div>
+
+        </div><!-- end left col -->
+
+        <!-- Right: Purchase Box (desktop sidebar) -->
+        <div class="product-info-box card rounded-xl p-5 space-y-4 sticky top-4 self-start">
+
+            <!-- Badge + category -->
+            <div class="flex items-center gap-2 flex-wrap">
+                <span class="badge badge-primary text-xs px-2 py-0.5 rounded-full">PHP</span>
+                <span class="text-xs text-gray-400">Web Codes</span>
+            </div>
+
+            <!-- Title -->
+            <h1 class="product-title text-xl sm:text-2xl font-bold leading-snug">เว็บขาย บัญชี stock api adswar.shop</h1>
+
+            <!-- Price -->
+            <div class="product-price-row">
+                                <div class="text-3xl font-black text-primary">฿190.00</div>
+                            </div>
+
+            <!-- Meta list -->
+            <ul class="product-meta-list space-y-2 text-sm">
+                <li class="flex items-center gap-2">
+                    <i class="ri-star-fill text-yellow-400 shrink-0"></i>
+                    <span class="text-gray-400 w-24 shrink-0">Rating</span>
+                    <span class="font-medium">0.0/5 (0 รีวิว)</span>
+                </li>
+                <li class="flex items-center gap-2">
+                    <i class="ri-shopping-bag-line shrink-0"></i>
+                    <span class="text-gray-400 w-24 shrink-0">ขายไปแล้ว</span>
+                    <span class="font-medium">2 ครั้ง</span>
+                </li>
+                <li class="flex items-center gap-2">
+                    <i class="ri-eye-line shrink-0"></i>
+                    <span class="text-gray-400 w-24 shrink-0">เข้าชม</span>
+                    <span class="font-medium">359</span>
+                </li>
+                <li class="flex items-center gap-2">
+                    <i class="ri-code-line shrink-0"></i>
+                    <span class="text-gray-400 w-24 shrink-0">ภาษา</span>
+                    <span class="font-medium">PHP</span>
+                </li>
+                <li class="flex items-center gap-2">
+                    <i class="ri-git-branch-line shrink-0"></i>
+                    <span class="text-gray-400 w-24 shrink-0">เวอร์ชัน</span>
+                    <span class="font-medium">1.0.0</span>
+                </li>
+            </ul>
+
+            <!-- Coupon -->
+            
+            <!-- Final price -->
+            <div id="final-price" class="text-2xl font-black text-primary -mt-2">
+                ฿190.00            </div>
+
+            <!-- Action buttons -->
+            <div class="space-y-2 pt-1">
+                                <a href="https://codewtf.shop/login"
+                   class="btn btn-primary flex items-center justify-center gap-2 w-full py-3 rounded-xl font-semibold text-sm">
+                    <i class="ri-login-circle-line"></i> เข้าสู่ระบบเพื่อซื้อ
+                </a>
+                
+                <button class="btn btn-ghost product-card-wishlist  flex items-center justify-center gap-2 w-full py-3 rounded-xl text-sm border border-white/10 hover:border-primary transition-colors"
+                        data-id="2">
+                    <i class="ri-heart-line"></i>
+                    เพิ่ม Wishlist                </button>
+            </div>
+
+        </div><!-- end right col -->
+
+    </div><!-- end main grid -->
+
+    <!-- Related Products -->
+        <section class="mt-12 mb-8">
+        <div class="section-header mb-5">
+            <h2 class="section-title text-xl font-bold">สินค้าที่เกี่ยวข้อง</h2>
+        </div>
+        <div class="products-grid grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div class="product-card">
+    <div class="product-card-image">
+        <a href="https://codewtf.shop/code/web-get-key-linkvertise-roblox">
+            <img class="lazy" data-src="https://codewtf.shop/uploads/products/img_69c04e67afc783.50919125.png" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" alt="เว็บ Get Key Linkvertise Roblox">
+        </a>
+        <span class="product-card-badge badge-php">PHP</span>
+        <div class="product-card-wishlist " data-id="3" title="Wishlist">
+            <i class="ri-heart-line"></i>
+        </div>
+    </div>
+    <div class="product-card-body">
+        <div class="product-card-cat">Web Codes</div>
+        <a href="https://codewtf.shop/code/web-get-key-linkvertise-roblox" class="product-card-name">เว็บ Get Key Linkvertise Roblox</a>
+        <div class="product-card-meta">
+            <div class="product-card-rating"><div class="stars"><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i></div> 0.0</div>
+            <div class="product-card-sales"><i class="ri-shopping-bag-line"></i> 0</div>
+        </div>
+        <div class="product-card-footer">
+            <div class="product-card-price ">฿19.00</div>
+            <a href="https://codewtf.shop/code/web-get-key-linkvertise-roblox" class="btn btn-primary btn-sm">ดูเพิ่มเติม</a>
+        </div>
+    </div>
+</div>        </div>
+    </section>
+    
+</div>
+</main>
+
+<script>
+function switchImg(el) {
+    document.getElementById('main-product-img').src = el.src;
+    document.querySelectorAll('.product-thumb').forEach(t => {
+        t.classList.remove('active', 'border-primary');
+        t.classList.add('border-transparent');
+    });
+    el.classList.add('active', 'border-primary');
+    el.classList.remove('border-transparent');
+}
+</script>
+
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">CODEWTF.SHOP</div>
+                <p>ร้านขายโค้ด / สคริปต์คุณภาพสูง พร้อมใช้งานทันที รองรับหลายภาษา PHP, Python, Lua และอื่นๆ</p>
+            </div>
+            <div>
+                <div class="footer-title">เมนูหลัก</div>
+                <a href="https://codewtf.shop/" class="footer-link">หน้าแรก</a>
+                <a href="https://codewtf.shop/ranking" class="footer-link">Ranking</a>
+                <a href="https://codewtf.shop/search" class="footer-link">ค้นหา</a>
+                                <a href="https://web.facebook.com/mix.pawarit.2025" target="_blank" class="footer-link">ติดต่อ Facebook</a>
+                            </div>
+            <div>
+                <div class="footer-title">หมวดหมู่</div>
+                                <a href="https://codewtf.shop/category/discord-codes" class="footer-link">Discord Codes</a>
+                                <a href="https://codewtf.shop/category/line-codes" class="footer-link">Line Codes</a>
+                                <a href="https://codewtf.shop/category/tiktok-codes" class="footer-link">Tiktok Codes</a>
+                                <a href="https://codewtf.shop/category/web-codes" class="footer-link">Web Codes</a>
+                            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 CODEWTF.SHOP · All rights reserved.</span>
+            <span>Powered by PHP + MySQL</span>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- reCAPTCHA (loaded on demand) -->
+<!-- Main JS -->
+<script src="https://codewtf.shop/assets/js/main.js"></script>
+</body>
+</html>

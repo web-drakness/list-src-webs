@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- SEO -->
+    <title>CODEWTF.SHOP - ร้านขายโค้ด/สคริปต์</title>
+    <meta name="description" content="ร้านขายโค้ด/สคริปต์คุณภาพสูง">
+    <link rel="canonical" href="https://codewtf.shop/">
+    <meta property="og:title" content="CODEWTF.SHOP - ร้านขายโค้ด/สคริปต์">
+    <meta property="og:description" content="ร้านขายโค้ด/สคริปต์คุณภาพสูง">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://codewtf.shop/">
+    
+    <!-- App Meta -->
+    <meta name="site-url" content="https://codewtf.shop">
+    <meta name="csrf-token" content="547f3971ae30bf3f20368e83e460051312c4b41feeb01da9253eb824529b23a0">
+
+    <!-- Favicon & Icons (SEO) -->
+    <link rel="icon" href="https://codewtf.shop/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://codewtf.shop/assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="https://codewtf.shop/assets/images/logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://codewtf.shop/assets/images/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://codewtf.shop/assets/images/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://codewtf.shop/assets/images/logo.png">
+    <meta name="theme-color" content="#ff0000">
+    <meta name="robots" content="index, follow">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CODEWTF.SHOP - ร้านขายโค้ด/สคริปต์">
+    <meta name="twitter:description" content="ร้านขายโค้ด/สคริปต์คุณภาพสูง">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="https://codewtf.shop/assets/css/main.css">
+
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    </head>
+<body data-loggedin="0">
+
+<!-- Sidebar Overlay -->
+<div class="sidebar-overlay"></div>
+
+<!-- Mobile Sidebar -->
+<nav class="mobile-sidebar">
+    <div class="sidebar-header">
+        <div class="nav-logo-text">CODEWTF.SHOP</div>
+        <div class="sidebar-close"><i class="ri-close-line"></i></div>
+    </div>
+    <div class="sidebar-nav">
+        <a href="https://codewtf.shop/" class="sidebar-link"><i class="ri-home-4-line"></i> หน้าแรก</a>
+        <a href="https://codewtf.shop/ranking" class="sidebar-link"><i class="ri-trophy-line"></i> Ranking</a>
+        <a href="https://codewtf.shop/search" class="sidebar-link"><i class="ri-search-line"></i> ค้นหา</a>
+                <a href="https://web.facebook.com/mix.pawarit.2025" target="_blank" class="sidebar-link"><i class="ri-facebook-circle-fill" style="color:#1877f2"></i> Facebook</a>
+                <hr style="border-color:var(--border);margin:8px 0;">
+                <a href="https://codewtf.shop/login" class="sidebar-link"><i class="ri-login-circle-line"></i> เข้าสู่ระบบ</a>
+        <a href="https://codewtf.shop/register" class="sidebar-link"><i class="ri-user-add-line"></i> สมัครสมาชิก</a>
+            </div>
+    <div class="sidebar-cats">
+        <h4>หมวดหมู่</h4>
+                <a href="https://codewtf.shop/category/discord-codes" class="sidebar-link" style="font-size:0.88rem;">
+            <i class="ri-discord-line"></i> Discord Codes        </a>
+                <a href="https://codewtf.shop/category/line-codes" class="sidebar-link" style="font-size:0.88rem;">
+            <i class="ri-line-line"></i> Line Codes        </a>
+                <a href="https://codewtf.shop/category/tiktok-codes" class="sidebar-link" style="font-size:0.88rem;">
+            <i class="ri-tiktok-line"></i> Tiktok Codes        </a>
+                <a href="https://codewtf.shop/category/web-codes" class="sidebar-link" style="font-size:0.88rem;">
+            <i class="ri-code-line"></i> Web Codes        </a>
+            </div>
+</nav>
+
+<!-- Navbar -->
+<header class="navbar">
+    <div class="container nav-inner">
+        <!-- Hamburger (mobile) -->
+        <button class="nav-hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+
+        <!-- Logo -->
+        <a href="https://codewtf.shop/" class="nav-logo">
+                        <img src="https://codewtf.shop/uploads/logos/img_69bed513980dd1.34311340.png" alt="CODEWTF.SHOP">
+                    </a>
+
+        <!-- Main Links -->
+        <nav class="nav-links">
+            <a href="https://codewtf.shop/" class="nav-link">หน้าแรก</a>
+
+            <!-- Categories Scroll -->
+            <div class="nav-categories">
+                                <a href="https://codewtf.shop/category/discord-codes" class="nav-cat-item">
+                    <i class="ri-discord-line"></i>Discord Codes                </a>
+                                <a href="https://codewtf.shop/category/line-codes" class="nav-cat-item">
+                    <i class="ri-line-line"></i>Line Codes                </a>
+                                <a href="https://codewtf.shop/category/tiktok-codes" class="nav-cat-item">
+                    <i class="ri-tiktok-line"></i>Tiktok Codes                </a>
+                                <a href="https://codewtf.shop/category/web-codes" class="nav-cat-item">
+                    <i class="ri-code-line"></i>Web Codes                </a>
+                            </div>
+
+            <a href="https://codewtf.shop/ranking" class="nav-link">Ranking</a>
+        </nav>
+
+        <!-- Search -->
+        <div class="nav-search">
+            <i class="ri-search-line search-icon"></i>
+            <input type="text" placeholder="ค้นหาโค้ด..." autocomplete="off" aria-label="ค้นหา">
+            <div class="search-dropdown"></div>
+        </div>
+
+        <!-- Right -->
+        <div class="nav-right">
+            <!-- Facebook -->
+                        <a href="https://web.facebook.com/mix.pawarit.2025" target="_blank" class="nav-fb-btn">
+                <i class="ri-facebook-circle-fill"></i>
+                <span class="btn-text">Facebook</span>
+            </a>
+            
+                        <a href="https://codewtf.shop/login" class="btn btn-ghost btn-sm">เข้าสู่ระบบ</a>
+            <a href="https://codewtf.shop/register" class="btn btn-primary btn-sm">สมัครสมาชิก</a>
+                    </div>
+    </div>
+</header>
+
+<!-- Toast Area -->
+<div class="toast-area" id="toast-area"></div>
+
+<main class="page-content">
+
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container" style="position:relative;z-index:1;">
+        <div class="hero-label animate-in">
+            <i class="ri-fire-line"></i> Premium Code Shop
+        </div>
+        <h1 class="animate-in" style="animation-delay:.1s">
+            โค้ดคุณภาพสูง<br>
+            <span style="color:var(--primary)">ใช้งานได้ทันที</span>
+        </h1>
+        <p class="animate-in" style="animation-delay:.2s">
+            ร้านขายสคริปต์ / โค้ด PHP, Python, Lua และอื่นๆ<br>
+            ดาวน์โหลดทันทีหลังชำระเงิน
+        </p>
+        <div class="hero-actions animate-in" style="animation-delay:.3s">
+            <a href="https://codewtf.shop/search" class="btn btn-primary btn-lg">
+                <i class="ri-search-line"></i> เลือกดูสินค้า
+            </a>
+            <a href="https://codewtf.shop/ranking" class="btn btn-outline btn-lg">
+                <i class="ri-trophy-line"></i> Ranking
+            </a>
+        </div>
+        <div class="hero-stats animate-in" style="animation-delay:.4s">
+            <div class="hero-stat">
+                <div class="hero-stat-num">2+</div>
+                <div class="hero-stat-label">สินค้า</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-num">9+</div>
+                <div class="hero-stat-label">สมาชิก</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-num">2+</div>
+                <div class="hero-stat-label">ออเดอร์</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Categories -->
+<section>
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">หมวดหมู่</h2>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;">
+                        <a href="https://codewtf.shop/category/discord-codes" class="cat-box" style="
+                display:flex;flex-direction:column;align-items:center;gap:10px;
+                padding:20px 12px;background:var(--bg-card);border:1px solid var(--border);
+                border-radius:var(--radius);text-align:center;transition:all var(--transition);text-decoration:none;">
+                <div style="width:44px;height:44px;background:var(--primary-ultra);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--primary);">
+                    <i class="ri-discord-line" style="font-size:1.4rem;"></i>
+                </div>
+                <span style="font-size:0.88rem;font-weight:600;">Discord Codes</span>
+            </a>
+                        <a href="https://codewtf.shop/category/line-codes" class="cat-box" style="
+                display:flex;flex-direction:column;align-items:center;gap:10px;
+                padding:20px 12px;background:var(--bg-card);border:1px solid var(--border);
+                border-radius:var(--radius);text-align:center;transition:all var(--transition);text-decoration:none;">
+                <div style="width:44px;height:44px;background:var(--primary-ultra);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--primary);">
+                    <i class="ri-line-line" style="font-size:1.4rem;"></i>
+                </div>
+                <span style="font-size:0.88rem;font-weight:600;">Line Codes</span>
+            </a>
+                        <a href="https://codewtf.shop/category/tiktok-codes" class="cat-box" style="
+                display:flex;flex-direction:column;align-items:center;gap:10px;
+                padding:20px 12px;background:var(--bg-card);border:1px solid var(--border);
+                border-radius:var(--radius);text-align:center;transition:all var(--transition);text-decoration:none;">
+                <div style="width:44px;height:44px;background:var(--primary-ultra);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--primary);">
+                    <i class="ri-tiktok-line" style="font-size:1.4rem;"></i>
+                </div>
+                <span style="font-size:0.88rem;font-weight:600;">Tiktok Codes</span>
+            </a>
+                        <a href="https://codewtf.shop/category/web-codes" class="cat-box" style="
+                display:flex;flex-direction:column;align-items:center;gap:10px;
+                padding:20px 12px;background:var(--bg-card);border:1px solid var(--border);
+                border-radius:var(--radius);text-align:center;transition:all var(--transition);text-decoration:none;">
+                <div style="width:44px;height:44px;background:var(--primary-ultra);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--primary);">
+                    <i class="ri-code-line" style="font-size:1.4rem;"></i>
+                </div>
+                <span style="font-size:0.88rem;font-weight:600;">Web Codes</span>
+            </a>
+                    </div>
+    </div>
+</section>
+
+<!-- Best Sellers -->
+<section>
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">สินค้าขายดี</h2>
+            <a href="https://codewtf.shop/search?sort=sales" class="section-link">ดูทั้งหมด →</a>
+        </div>
+        <div class="products-grid">
+            <div class="product-card">
+    <div class="product-card-image">
+        <a href="https://codewtf.shop/code/shop-stock-api-adswarshop">
+            <img class="lazy" data-src="https://codewtf.shop/uploads/products/img_69bf8ad772dc80.78171080.png" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" alt="เว็บขาย บัญชี stock api adswar.shop">
+        </a>
+        <span class="product-card-badge badge-php">PHP</span>
+        <div class="product-card-wishlist " data-id="2" title="Wishlist">
+            <i class="ri-heart-line"></i>
+        </div>
+    </div>
+    <div class="product-card-body">
+        <div class="product-card-cat">Web Codes</div>
+        <a href="https://codewtf.shop/code/shop-stock-api-adswarshop" class="product-card-name">เว็บขาย บัญชี stock api adswar.shop</a>
+        <div class="product-card-meta">
+            <div class="product-card-rating"><div class="stars"><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i></div> 0.0</div>
+            <div class="product-card-sales"><i class="ri-shopping-bag-line"></i> 2</div>
+        </div>
+        <div class="product-card-footer">
+            <div class="product-card-price ">฿190.00</div>
+            <a href="https://codewtf.shop/code/shop-stock-api-adswarshop" class="btn btn-primary btn-sm">ดูเพิ่มเติม</a>
+        </div>
+    </div>
+</div><div class="product-card">
+    <div class="product-card-image">
+        <a href="https://codewtf.shop/code/web-get-key-linkvertise-roblox">
+            <img class="lazy" data-src="https://codewtf.shop/uploads/products/img_69c04e67afc783.50919125.png" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" alt="เว็บ Get Key Linkvertise Roblox">
+        </a>
+        <span class="product-card-badge badge-php">PHP</span>
+        <div class="product-card-wishlist " data-id="3" title="Wishlist">
+            <i class="ri-heart-line"></i>
+        </div>
+    </div>
+    <div class="product-card-body">
+        <div class="product-card-cat">Web Codes</div>
+        <a href="https://codewtf.shop/code/web-get-key-linkvertise-roblox" class="product-card-name">เว็บ Get Key Linkvertise Roblox</a>
+        <div class="product-card-meta">
+            <div class="product-card-rating"><div class="stars"><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i></div> 0.0</div>
+            <div class="product-card-sales"><i class="ri-shopping-bag-line"></i> 0</div>
+        </div>
+        <div class="product-card-footer">
+            <div class="product-card-price ">฿19.00</div>
+            <a href="https://codewtf.shop/code/web-get-key-linkvertise-roblox" class="btn btn-primary btn-sm">ดูเพิ่มเติม</a>
+        </div>
+    </div>
+</div>        </div>
+    </div>
+</section>
+
+<!-- New Products -->
+<section>
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">สินค้ามาใหม่</h2>
+            <a href="https://codewtf.shop/search?sort=new" class="section-link">ดูทั้งหมด →</a>
+        </div>
+        <div class="products-grid">
+            <div class="product-card">
+    <div class="product-card-image">
+        <a href="https://codewtf.shop/code/web-get-key-linkvertise-roblox">
+            <img class="lazy" data-src="https://codewtf.shop/uploads/products/img_69c04e67afc783.50919125.png" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" alt="เว็บ Get Key Linkvertise Roblox">
+        </a>
+        <span class="product-card-badge badge-php">PHP</span>
+        <div class="product-card-wishlist " data-id="3" title="Wishlist">
+            <i class="ri-heart-line"></i>
+        </div>
+    </div>
+    <div class="product-card-body">
+        <div class="product-card-cat">Web Codes</div>
+        <a href="https://codewtf.shop/code/web-get-key-linkvertise-roblox" class="product-card-name">เว็บ Get Key Linkvertise Roblox</a>
+        <div class="product-card-meta">
+            <div class="product-card-rating"><div class="stars"><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i></div> 0.0</div>
+            <div class="product-card-sales"><i class="ri-shopping-bag-line"></i> 0</div>
+        </div>
+        <div class="product-card-footer">
+            <div class="product-card-price ">฿19.00</div>
+            <a href="https://codewtf.shop/code/web-get-key-linkvertise-roblox" class="btn btn-primary btn-sm">ดูเพิ่มเติม</a>
+        </div>
+    </div>
+</div><div class="product-card">
+    <div class="product-card-image">
+        <a href="https://codewtf.shop/code/shop-stock-api-adswarshop">
+            <img class="lazy" data-src="https://codewtf.shop/uploads/products/img_69bf8ad772dc80.78171080.png" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" alt="เว็บขาย บัญชี stock api adswar.shop">
+        </a>
+        <span class="product-card-badge badge-php">PHP</span>
+        <div class="product-card-wishlist " data-id="2" title="Wishlist">
+            <i class="ri-heart-line"></i>
+        </div>
+    </div>
+    <div class="product-card-body">
+        <div class="product-card-cat">Web Codes</div>
+        <a href="https://codewtf.shop/code/shop-stock-api-adswarshop" class="product-card-name">เว็บขาย บัญชี stock api adswar.shop</a>
+        <div class="product-card-meta">
+            <div class="product-card-rating"><div class="stars"><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i></div> 0.0</div>
+            <div class="product-card-sales"><i class="ri-shopping-bag-line"></i> 2</div>
+        </div>
+        <div class="product-card-footer">
+            <div class="product-card-price ">฿190.00</div>
+            <a href="https://codewtf.shop/code/shop-stock-api-adswarshop" class="btn btn-primary btn-sm">ดูเพิ่มเติม</a>
+        </div>
+    </div>
+</div>        </div>
+    </div>
+</section>
+
+</main>
+
+<style>
+.cat-box:hover { border-color: var(--primary) !important; transform: translateY(-3px); }
+</style>
+
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">CODEWTF.SHOP</div>
+                <p>ร้านขายโค้ด / สคริปต์คุณภาพสูง พร้อมใช้งานทันที รองรับหลายภาษา PHP, Python, Lua และอื่นๆ</p>
+            </div>
+            <div>
+                <div class="footer-title">เมนูหลัก</div>
+                <a href="https://codewtf.shop/" class="footer-link">หน้าแรก</a>
+                <a href="https://codewtf.shop/ranking" class="footer-link">Ranking</a>
+                <a href="https://codewtf.shop/search" class="footer-link">ค้นหา</a>
+                                <a href="https://web.facebook.com/mix.pawarit.2025" target="_blank" class="footer-link">ติดต่อ Facebook</a>
+                            </div>
+            <div>
+                <div class="footer-title">หมวดหมู่</div>
+                                <a href="https://codewtf.shop/category/discord-codes" class="footer-link">Discord Codes</a>
+                                <a href="https://codewtf.shop/category/line-codes" class="footer-link">Line Codes</a>
+                                <a href="https://codewtf.shop/category/tiktok-codes" class="footer-link">Tiktok Codes</a>
+                                <a href="https://codewtf.shop/category/web-codes" class="footer-link">Web Codes</a>
+                            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 CODEWTF.SHOP · All rights reserved.</span>
+            <span>Powered by PHP + MySQL</span>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- reCAPTCHA (loaded on demand) -->
+<!-- Main JS -->
+<script src="https://codewtf.shop/assets/js/main.js"></script>
+</body>
+</html>

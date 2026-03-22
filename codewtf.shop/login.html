@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- SEO -->
+    <title>เข้าสู่ระบบ - CODEWTF.SHOP</title>
+    <meta name="description" content="ร้านขายโค้ด/สคริปต์คุณภาพสูง">
+    <link rel="canonical" href="https://codewtf.shop/login">
+    <meta property="og:title" content="เข้าสู่ระบบ - CODEWTF.SHOP">
+    <meta property="og:description" content="ร้านขายโค้ด/สคริปต์คุณภาพสูง">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://codewtf.shop/login">
+    
+    <!-- App Meta -->
+    <meta name="site-url" content="https://codewtf.shop">
+    <meta name="csrf-token" content="44130377f07c341c899520271ed6ab94cfc31fa46d7f17beffa26a4420976688">
+
+    <!-- Favicon & Icons (SEO) -->
+    <link rel="icon" href="https://codewtf.shop/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://codewtf.shop/assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="https://codewtf.shop/assets/images/logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://codewtf.shop/assets/images/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://codewtf.shop/assets/images/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://codewtf.shop/assets/images/logo.png">
+    <meta name="theme-color" content="#ff0000">
+    <meta name="robots" content="index, follow">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="เข้าสู่ระบบ - CODEWTF.SHOP">
+    <meta name="twitter:description" content="ร้านขายโค้ด/สคริปต์คุณภาพสูง">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="https://codewtf.shop/assets/css/main.css">
+
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    </head>
+<body data-loggedin="0">
+
+<!-- Sidebar Overlay -->
+<div class="sidebar-overlay"></div>
+
+<!-- Mobile Sidebar -->
+<nav class="mobile-sidebar">
+    <div class="sidebar-header">
+        <div class="nav-logo-text">CODEWTF.SHOP</div>
+        <div class="sidebar-close"><i class="ri-close-line"></i></div>
+    </div>
+    <div class="sidebar-nav">
+        <a href="https://codewtf.shop/" class="sidebar-link"><i class="ri-home-4-line"></i> หน้าแรก</a>
+        <a href="https://codewtf.shop/ranking" class="sidebar-link"><i class="ri-trophy-line"></i> Ranking</a>
+        <a href="https://codewtf.shop/search" class="sidebar-link"><i class="ri-search-line"></i> ค้นหา</a>
+                <a href="https://web.facebook.com/mix.pawarit.2025" target="_blank" class="sidebar-link"><i class="ri-facebook-circle-fill" style="color:#1877f2"></i> Facebook</a>
+                <hr style="border-color:var(--border);margin:8px 0;">
+                <a href="https://codewtf.shop/login" class="sidebar-link"><i class="ri-login-circle-line"></i> เข้าสู่ระบบ</a>
+        <a href="https://codewtf.shop/register" class="sidebar-link"><i class="ri-user-add-line"></i> สมัครสมาชิก</a>
+            </div>
+    <div class="sidebar-cats">
+        <h4>หมวดหมู่</h4>
+                <a href="https://codewtf.shop/category/discord-codes" class="sidebar-link" style="font-size:0.88rem;">
+            <i class="ri-discord-line"></i> Discord Codes        </a>
+                <a href="https://codewtf.shop/category/line-codes" class="sidebar-link" style="font-size:0.88rem;">
+            <i class="ri-line-line"></i> Line Codes        </a>
+                <a href="https://codewtf.shop/category/tiktok-codes" class="sidebar-link" style="font-size:0.88rem;">
+            <i class="ri-tiktok-line"></i> Tiktok Codes        </a>
+                <a href="https://codewtf.shop/category/web-codes" class="sidebar-link" style="font-size:0.88rem;">
+            <i class="ri-code-line"></i> Web Codes        </a>
+            </div>
+</nav>
+
+<!-- Navbar -->
+<header class="navbar">
+    <div class="container nav-inner">
+        <!-- Hamburger (mobile) -->
+        <button class="nav-hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+
+        <!-- Logo -->
+        <a href="https://codewtf.shop/" class="nav-logo">
+                        <img src="https://codewtf.shop/uploads/logos/img_69bed513980dd1.34311340.png" alt="CODEWTF.SHOP">
+                    </a>
+
+        <!-- Main Links -->
+        <nav class="nav-links">
+            <a href="https://codewtf.shop/" class="nav-link">หน้าแรก</a>
+
+            <!-- Categories Scroll -->
+            <div class="nav-categories">
+                                <a href="https://codewtf.shop/category/discord-codes" class="nav-cat-item">
+                    <i class="ri-discord-line"></i>Discord Codes                </a>
+                                <a href="https://codewtf.shop/category/line-codes" class="nav-cat-item">
+                    <i class="ri-line-line"></i>Line Codes                </a>
+                                <a href="https://codewtf.shop/category/tiktok-codes" class="nav-cat-item">
+                    <i class="ri-tiktok-line"></i>Tiktok Codes                </a>
+                                <a href="https://codewtf.shop/category/web-codes" class="nav-cat-item">
+                    <i class="ri-code-line"></i>Web Codes                </a>
+                            </div>
+
+            <a href="https://codewtf.shop/ranking" class="nav-link">Ranking</a>
+        </nav>
+
+        <!-- Search -->
+        <div class="nav-search">
+            <i class="ri-search-line search-icon"></i>
+            <input type="text" placeholder="ค้นหาโค้ด..." autocomplete="off" aria-label="ค้นหา">
+            <div class="search-dropdown"></div>
+        </div>
+
+        <!-- Right -->
+        <div class="nav-right">
+            <!-- Facebook -->
+                        <a href="https://web.facebook.com/mix.pawarit.2025" target="_blank" class="nav-fb-btn">
+                <i class="ri-facebook-circle-fill"></i>
+                <span class="btn-text">Facebook</span>
+            </a>
+            
+                        <a href="https://codewtf.shop/login" class="btn btn-ghost btn-sm">เข้าสู่ระบบ</a>
+            <a href="https://codewtf.shop/register" class="btn btn-primary btn-sm">สมัครสมาชิก</a>
+                    </div>
+    </div>
+</header>
+
+<!-- Toast Area -->
+<div class="toast-area" id="toast-area"></div>
+
+<div class="auth-page">
+    <div class="auth-card">
+        <div class="auth-logo">
+            <h1><i class="ri-code-box-line"></i> CODEWTF.SHOP</h1>
+            <p>เข้าสู่ระบบ</p>
+        </div>
+
+        
+        <form method="POST" action="">
+            <input type="hidden" name="_csrf_token" value="44130377f07c341c899520271ed6ab94cfc31fa46d7f17beffa26a4420976688">
+            <div class="form-group">
+                <label class="form-label">อีเมล</label>
+                <input type="email" name="email" class="form-control" placeholder="your@email.com" required value="">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">รหัสผ่าน</label>
+                <div style="position:relative;">
+                    <input type="password" name="password" id="pw-field" class="form-control" placeholder="••••••••" required style="padding-right:44px;">
+                    <i class="ri-eye-off-line" id="pw-toggle" style="position:absolute;right:13px;top:50%;transform:translateY(-50%);cursor:pointer;color:var(--text-muted);font-size:1.1rem;"></i>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">PIN 4 หลัก</label>
+                <div class="pin-inputs">
+                                        <input type="password" maxlength="1" class="pin-input" inputmode="numeric" pattern="\d*">
+                                        <input type="password" maxlength="1" class="pin-input" inputmode="numeric" pattern="\d*">
+                                        <input type="password" maxlength="1" class="pin-input" inputmode="numeric" pattern="\d*">
+                                        <input type="password" maxlength="1" class="pin-input" inputmode="numeric" pattern="\d*">
+                                    </div>
+                <input type="hidden" name="pin" id="pin-hidden">
+            </div>
+
+            <div class="form-group" style="text-align:right;margin-top:-10px;">
+                <a href="https://codewtf.shop/forgot-password" style="font-size:0.83rem;color:var(--primary);">ลืมรหัสผ่าน?</a>
+            </div>
+
+            <div class="form-group">
+                <div class="g-recaptcha" data-sitekey="6LcCjpIsAAAAAJaDtCYDrUqhonae3LCmcYUBXgbi"></div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" onclick="combinePIN()">
+                <i class="ri-login-circle-line"></i> เข้าสู่ระบบ
+            </button>
+        </form>
+
+        <div class="auth-footer">
+            ยังไม่มีบัญชี? <a href="https://codewtf.shop/register">สมัครสมาชิก</a>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Password toggle
+    const pwToggle = document.getElementById('pw-toggle');
+    const pwField = document.getElementById('pw-field');
+    
+    if (pwToggle && pwField) {
+        pwToggle.addEventListener('click', function() {
+            const type = pwField.getAttribute('type') === 'password' ? 'text' : 'password';
+            pwField.setAttribute('type', type);
+            this.classList.toggle('ri-eye-off-line');
+            this.classList.toggle('ri-eye-line');
+        });
+    }
+    
+    // Combine PIN
+    window.combinePIN = function() {
+        const digits = [];
+        document.querySelectorAll('.pin-input').forEach(input => {
+            digits.push(input.value);
+        });
+        document.getElementById('pin-hidden').value = digits.join('');
+    };
+});
+</script>
+
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">CODEWTF.SHOP</div>
+                <p>ร้านขายโค้ด / สคริปต์คุณภาพสูง พร้อมใช้งานทันที รองรับหลายภาษา PHP, Python, Lua และอื่นๆ</p>
+            </div>
+            <div>
+                <div class="footer-title">เมนูหลัก</div>
+                <a href="https://codewtf.shop/" class="footer-link">หน้าแรก</a>
+                <a href="https://codewtf.shop/ranking" class="footer-link">Ranking</a>
+                <a href="https://codewtf.shop/search" class="footer-link">ค้นหา</a>
+                                <a href="https://web.facebook.com/mix.pawarit.2025" target="_blank" class="footer-link">ติดต่อ Facebook</a>
+                            </div>
+            <div>
+                <div class="footer-title">หมวดหมู่</div>
+                                <a href="https://codewtf.shop/category/discord-codes" class="footer-link">Discord Codes</a>
+                                <a href="https://codewtf.shop/category/line-codes" class="footer-link">Line Codes</a>
+                                <a href="https://codewtf.shop/category/tiktok-codes" class="footer-link">Tiktok Codes</a>
+                                <a href="https://codewtf.shop/category/web-codes" class="footer-link">Web Codes</a>
+                            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 CODEWTF.SHOP · All rights reserved.</span>
+            <span>Powered by PHP + MySQL</span>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- reCAPTCHA (loaded on demand) -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<!-- Main JS -->
+<script src="https://codewtf.shop/assets/js/main.js"></script>
+</body>
+</html>
