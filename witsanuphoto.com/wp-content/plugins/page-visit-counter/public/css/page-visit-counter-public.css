@@ -1,0 +1,11 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+.page_counter_icon {
+    width: 28px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.page_counter_label{clear: both;margin-bottom: 10px;}

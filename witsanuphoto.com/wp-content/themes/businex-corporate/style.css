@@ -1,0 +1,40 @@
+/*
+Theme Name: Businex Corporate
+Theme URI: https://keonthemes.com/downloads/businex-corporate/
+Author: Keon Themes
+Author URI: https://keonthemes.com/
+Description: Businex Corporate is a beautiful and elegant blue color schemed child theme of Businex. Theme Demo: https://keonthemes.com/theme-demo/?id=MTk3MnxidXNpbmV4LWNvcnBvcmF0ZXxCdXNpbmV4IENvcnBvcmF0ZQ=
+Version: 1.0.1
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Template: businex
+Text Domain: businex-corporate
+Tags: blog, education, portfolio, grid-Layout, two-columns, flexible-header, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-images, full-width-template, post-formats, rtl-language-support, theme-options, sticky-post, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/*======================================*/
+/* Background Primary color */
+/*======================================*/
+body #go-top span:hover, body #go-top span:focus, body #go-top span:active, body .page-numbers.current,
+body .searchform .search-button, body .button-primary, body .wrap-detail-page .contact-form-section input[type="submit"], body .wrap-detail-page .kt-contact-form-area .form-group input.form-control[type="submit"], body .block-grid .post-content .post-content-inner span.cat a, body .block-grid .post-content .post-content-inner .button-container .post-footer-detail .post-format-outer > span span, body .comments-area .comment-respond .comment-form .submit, body .wrap-detail-page form input[type="submit"], body .widget.widget_mc4wp_form_widget input[type="submit"], body .block-slider #kt-slide-pager .owl-dot span:hover, body .block-slider #kt-slide-pager .owl-dot span:focus, body .block-slider #kt-slide-pager .owl-dot span:active, body .section-title:before, body .section-title:after, body .infinite-scroll #infinite-handle span:hover, body .infinite-scroll #infinite-handle span:focus, body .infinite-scroll #infinite-handle span:active, body .kt-contact-form-area .form-group input.form-control[type="submit"], body .contact-form-section input[type="submit"], body .wrap-detail-page .wpcf7 input[type="submit"], body .block-slider #kt-slide-pager .owl-dot.active span:hover, body .block-slider #kt-slide-pager .owl-dot.active span:focus, body .block-slider #kt-slide-pager .owl-dot.active span:active {
+	background-color: #00b294;
+}
+
+/*======================================*/
+/* Primary border color */
+/*======================================*/
+body #go-top span:hover, body #go-top span:focus, body #go-top span:active,
+.main-navigation ul ul, body .page-numbers.current,
+body .searchform .search-button, body .button-primary, body .wrap-detail-page .contact-form-section input[type="submit"], body .wrap-detail-page .kt-contact-form-area .form-group input.form-control[type="submit"], body .comments-area .comment-respond .comment-form .submit, body .wrap-detail-page form input[type="submit"], body .widget.widget_mc4wp_form_widget input[type="submit"], body .block-slider .controls .owl-prev:hover:before, body .block-slider .controls .owl-prev:focus:before, body .block-slider .controls .owl-prev:active:before, body .block-slider .controls .owl-next:hover:before, body .block-slider .controls .owl-next:focus:before, body .block-slider .controls .owl-next:active:before, body .block-slider #kt-slide-pager .owl-dot span:hover, body .block-slider #kt-slide-pager .owl-dot span:focus, body .block-slider #kt-slide-pager .owl-dot span:active, body .block-highlight .controls .owl-prev:hover:before, body .block-highlight .controls .owl-prev:focus:before, body .block-highlight .controls .owl-prev:active:before, body .block-highlight .controls .owl-next:hover:before, body .block-highlight .controls .owl-next:focus:before, body .block-highlight .controls .owl-next:active:before, body .kt-contact-form-area .form-group input.form-control[type="submit"], body .contact-form-section input[type="submit"], body .wrap-detail-page .wpcf7 input[type="submit"] {
+	border-color: #00b294;
+}
+
+/*======================================*/
+/* Primary text color */
+/*======================================*/
+body .site-header.site-header-two .header-contact .list:last-child .list-content a, body .icon-block-outer .icon-outer span, body .icon-block-outer .icon-content-area .button-container .button-text, body .icon-block-outer .icon-content-area .button-container .button-text:before, body .edit-link .post-edit-link:hover, body .edit-link .post-edit-link:focus, body .edit-link .post-edit-link:active, body .edit-link .comment-edit-link:hover, body .edit-link .comment-edit-link:focus, body .edit-link .comment-edit-link:active {
+	color: #00b294;
+}
